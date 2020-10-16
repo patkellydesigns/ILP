@@ -2,3 +2,6 @@
 /node_modules
 /.vs
 .vercel
+.env
+.env.build
+.env.build

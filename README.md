@@ -1,10 +1,8 @@
-# **Nitro** -  Next.js, Material UI, Auth0 and Typescript 
+# **ILP** -  Next.js, Material UI, Auth0 and Typescript 
 
 ![GitHub stars](https://img.shields.io/github/stars/williamluke4/nitro.svg?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/williamluke4/nitro.svg?style=for-the-badge)
-[![Beerpay](https://beerpay.io/williamluke4/Nitro/badge.svg?style=beer)](https://beerpay.io/williamluke4/Nitro)
-
-![NMST](nitro.gif)
+ 
 
 ##
 - PR's are very welcome

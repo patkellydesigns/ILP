@@ -5,3 +5,7 @@
 .env
 .env.build
  
+ 
+env.development
+localhost.key
+localhost.crt

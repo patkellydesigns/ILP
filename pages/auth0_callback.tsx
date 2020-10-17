@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-
-import { useAuth } from "use-auth0";
-import { makeStyles } from "@material-ui/core/styles";
-import { RocketMan } from "components/RocketMan";
+import { makeStyles } from '@material-ui/core/styles';
+import { RocketMan } from 'components/RocketMan';
+import React, { useEffect } from 'react';
+import { useAuth } from 'use-auth0';
 
 const useStyles = makeStyles(() => ({
   root: {
-    textAlign: "center",
-    height: "100vh"
-  }
+    textAlign: 'center',
+    height: '100vh',
+  },
 }));
 const Auth0CallbackPage = () => {
   const { handleAuthentication } = useAuth();

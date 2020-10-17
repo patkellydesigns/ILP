@@ -1,15 +1,15 @@
 // https://codepen.io/chrisgannon/pen/EjVyXN
-import * as React from 'react';
-import { makeStyles, createStyles } from '@material-ui/core';
-import { TimelineMax, TweenMax, Linear, Power2 } from 'gsap';
+import { createStyles, makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
+import { Linear, Power2, TimelineMax, TweenMax } from 'gsap';
+import * as React from 'react';
 
 const useStyles = makeStyles(() =>
   createStyles({
     svg: {
       width: '100%',
       height: '100%',
-      backgroundColor:'#1d1d1d'
+      backgroundColor: '#1d1d1d',
     },
   }),
 );
@@ -34,7 +34,7 @@ export const RocketMan = () => {
       yoyo: true,
     });
     const mainTimeline = new TimelineMax({ repeat: -1 });
-    const mainSpeedLinesTimeline = new TimelineMax({ repeat: -1 , paused:false});
+    const mainSpeedLinesTimeline = new TimelineMax({ repeat: -1, paused: false });
     mainSpeedLinesTimeline.timeScale(2);
     mainTimeline.timeScale(6).seek(100);
     function createJets() {
@@ -69,27 +69,24 @@ export const RocketMan = () => {
           .to(sl, 0, {
             attr: {
               y1: '-=170%',
-              y2: '-=170%'
+              y2: '-=170%',
             },
             ease: Linear.easeNone,
-            
           })
           .to(sl, 0.2, {
             attr: {
               y1: '+=270%',
-              y2: '+=170%'
+              y2: '+=170%',
             },
             ease: Linear.easeNone,
-            
           })
           .to(sl, 1, {
             attr: {
               y1: '+=600%',
-              y2: '+=600%'
+              y2: '+=600%',
             },
             ease: Linear.easeNone,
-            
-          })
+          });
 
         mainSpeedLinesTimeline.add(stl, i / 23);
       }
@@ -424,7 +421,6 @@ V117.8z"
           <use xlinkHref="#badge" x="0" y="0" />
         </g>
       </g>
-     
     </svg>
   );
 };

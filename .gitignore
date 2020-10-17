@@ -11,3 +11,4 @@ localhost.key
 localhost.crt
 .env.development
 .env.production
+now.json

@@ -46,7 +46,7 @@
   "scripts": {
     "dev": "vercel dev --listen 8080",
     "build": "next build",
-    "start": "next start"
-
+    "start": "next start",
+    "deploy": "vercel"
   }
 }

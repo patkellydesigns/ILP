@@ -12,31 +12,14 @@
 ## Links
 
 - [Auth Setup](#auth)
-- [NPM Setup](#npm)
+ 
 - [YARN Setup](#yarn)
 
 ## Auth
  - [Auth0 Setup](https://github.com/atto-byte/useAuth)
  - Video On [Secrets and Environment Variables in Next.js and Now](https://www.youtube.com/watch?v=pRbQcy9f5ew)
 
-## NPM
-
-### Install and Run Dev Server
-
-```bash
-git clone https://github.com/williamluke4/nitro.git
-cd nitro
-
-npm install
-npm run dev
-```
-
-### Production Build and Start
-
-```bash
-  npm run build
-  npm run start
-```
+ 
 
 ## Yarn
 

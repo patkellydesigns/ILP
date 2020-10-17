@@ -9,3 +9,5 @@
 env.development
 localhost.key
 localhost.crt
+.env.development
+.env.production

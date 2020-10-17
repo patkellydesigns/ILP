@@ -6,6 +6,7 @@ import { RocketMan } from 'components/RocketMan';
 import Head from 'next/head';
 import * as React from 'react';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useStyles = makeStyles((theme: any) => ({
   root: {
     textAlign: 'center',
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme: any) => ({
 
 const Index: React.FC = () => {
   const handleOpenLink = (href: string) => {
+    // eslint-disable-next-line no-undef
     window.open(href);
     return false;
   };

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Layout } from 'components/Layout';
+import { Layout } from 'components/Layout/layout';
 import Stage from 'components/stage';
 import Head from 'next/head';
 import React from 'react';
@@ -12,17 +12,6 @@ const useStyles = makeStyles((theme: any) => ({
     position: 'relative',
   },
 
-  background: {
-    top: 0,
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    paddingTop: '10%',
-    backgroundColor: '#1d1d1d',
-    zIndex: -1,
-    backgroundImage: "url('./header-image.jpg')",
-    backgroundSize: 'cover',
-  },
   chipContainer: {
     padding: '6px',
     display: 'flex',
@@ -48,7 +37,7 @@ const Home: React.FC = () => {
         <Head>
           <title>iLikePlastic</title>
         </Head>
-        <Stage cta="iLikePlastic" image="./header-image.jpg" />
+        <Stage />
       </div>
     </Layout>
   );

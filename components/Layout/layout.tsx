@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
-import { Footer } from './footer';
+import { Footer } from './Footer/footer';
 import { User } from './User';
 const drawerWidth = 240;
 

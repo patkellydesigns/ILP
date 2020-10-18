@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React from 'react';
-import FooterWidget from './Footer/footer-widget';
+import FooterWidget from './footer-widget';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -3,7 +3,8 @@ import React from 'react';
 import AuthButton from './auth-button';
 
 interface Props {
-  cta: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  cta: any;
 }
 
 const CTA = (props: Props) => {

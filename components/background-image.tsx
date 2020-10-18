@@ -2,6 +2,7 @@ import { Grid, makeStyles } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
 }
 const useStyles = makeStyles(() => ({

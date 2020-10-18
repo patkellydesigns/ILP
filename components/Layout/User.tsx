@@ -70,7 +70,7 @@ export function User() {
     );
   } else {
     return (
-      <Button color="secondary" className={classes.root} onClick={login}>
+      <Button color="primary" className={classes.root} onClick={login}>
         Login
       </Button>
     );

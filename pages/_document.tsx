@@ -14,7 +14,14 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></link>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Quicksand&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

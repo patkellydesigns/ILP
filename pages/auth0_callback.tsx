@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { RocketMan } from 'components/RocketMan';
+import { Profile } from 'components/profile';
 import React, { useEffect } from 'react';
 import { useAuth } from 'use-auth0';
 
@@ -13,12 +13,13 @@ const Auth0CallbackPage = () => {
   const { handleAuthentication } = useAuth();
   useEffect(() => {
     handleAuthentication();
-  }, []);
+  });
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <RocketMan />
+      <div>Welcome</div>
+      <Profile />
     </div>
   );
 };

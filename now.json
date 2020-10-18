@@ -9,7 +9,7 @@
   "build": {
     "env": {
       "AUTH0_DOMAIN": "butterflydesign.us.auth0.com",
-      "AUTH0_CLIENT_ID": "c2xP6B7XuKPTJzCzcW3mOgXXxsu9Bubeo"
+      "AUTH0_CLIENT_ID": "2xP6B7XuKPTJzCzcW3mOgXXxsu9Bubeo"
     }
   },
   "regions": ["bru"],

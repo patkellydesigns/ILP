@@ -1,13 +1,13 @@
 {
-  "short_name": "Nitro",
-  "name": "Next.js, Material UI and Typescript",
+  "short_name": "ILP",
+  "name": "iLikePlastic",
   "icons": [{
-      "src": "/nitro-192.png",
+      "src": "/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/nitro-512.png",
+      "src": "/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

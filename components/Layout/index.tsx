@@ -1,5 +1,6 @@
-import React from 'react';
+import { Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
+import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
@@ -9,11 +10,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import MenuIcon from '@material-ui/icons/Menu';
+import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import MenuIcon from '@material-ui/icons/Menu';
+import React from 'react';
+import { Footer } from './footer';
 import { User } from './User';
 const drawerWidth = 240;
 
@@ -21,30 +24,32 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      flexGrow: 1,
       color: '#fff',
-    },
-    drawer: {
-      [theme.breakpoints.up('sm')]: {
-        width: drawerWidth,
-        flexShrink: 0,
+      appBar: {
+        background: '#fff',
       },
+    },
+    avatar: {
+      marginRight: theme.spacing(2),
     },
     appBar: {
       marginLeft: drawerWidth,
-      [theme.breakpoints.up('sm')]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-      },
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
     },
     menuButton: {
       marginRight: theme.spacing(2),
-      [theme.breakpoints.up('sm')]: {
-        display: 'none',
-      },
     },
+
     toolbar: theme.mixins.toolbar,
+
     drawerPaper: {
       width: drawerWidth,
-      backgroundColor: theme.palette.primary.main
+      backgroundColor: theme.palette.primary.main,
     },
     content: {
       flexGrow: 1,
@@ -63,7 +68,7 @@ interface LayoutProps {
   container?: Element;
 }
 
-export const Layout: React.FC<LayoutProps> = (props) => {
+export const Layout: React.FC<LayoutProps> = props => {
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -73,14 +78,18 @@ export const Layout: React.FC<LayoutProps> = (props) => {
     setMobileOpen(!mobileOpen);
   }
 
+  const logo = <Avatar className={classes.avatar} alt="iLikePLastic Logo" src="./logo.png" />;
+
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar}> </div>
       <Divider />
       <List>
-        {['Info'].map((text) => (
+        {['Info'].map(text => (
           <ListItem button key={text} className={classes.menuItem}>
-            <ListItemIcon className={classes.menuItem}><DashboardIcon /></ListItemIcon>
+            <ListItemIcon className={classes.menuItem}>
+              <DashboardIcon />
+            </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -88,46 +97,55 @@ export const Layout: React.FC<LayoutProps> = (props) => {
     </div>
   );
 
+  const appBar = (
+    <AppBar
+      position="fixed"
+      style={{
+        color: '#333',
+        backgroundColor: '#f9f9f9',
+      }}
+    >
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          className={classes.menuButton}
+        >
+          <MenuIcon />
+        </IconButton>
+        {logo}
+        <Typography variant="h6" noWrap>
+          iLikePlastic
+        </Typography>
+        <User />
+      </Toolbar>
+    </AppBar>
+  );
+
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Nitro 🚀
-          </Typography>
-          <User/>
-        </Toolbar>
-      </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
+      {appBar}
+      <nav aria-label="mailbox folders">
+        <Drawer
+          container={container}
+          variant="temporary"
+          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          ModalProps={{
+            keepMounted: true,
+          }}
+        >
+          {drawer}
+        </Drawer>
+
+        <Hidden xsUp implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper,
@@ -139,10 +157,16 @@ export const Layout: React.FC<LayoutProps> = (props) => {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        {props.children}
-      </main>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <main className={classes.content}>
+            <div className={classes.toolbar} />
+            {props.children}
+          </main>
+
+          <Footer />
+        </Grid>
+      </Grid>
     </div>
   );
-}
+};

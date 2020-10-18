@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React from 'react';
+import FooterWidget from './Footer/footer-widget';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
+      background: theme.palette.background.paper,
     },
   }),
 );
@@ -20,29 +21,16 @@ const useStyles = makeStyles((theme: Theme) =>
 export function Footer() {
   const classes = useStyles();
 
+  const footerWork = ['Careers', 'LinkedIn', 'Upload Resume'];
+  const footerSocial = ['Instagram', 'FAcebook', 'Twitter'];
+  const footerContact = ['WhatsApp', 'Messenger', 'Email'];
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
-        </Grid>
-      </Grid>
-      <Grid container spacing={3}>
-        <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>xs=6</Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
-        </Grid>
+        <FooterWidget title="Contact us" links={footerContact} />
+        <FooterWidget title="Social" links={footerSocial} />
+        <FooterWidget title="Work with us" links={footerWork} />
       </Grid>
     </div>
   );

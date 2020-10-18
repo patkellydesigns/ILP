@@ -1,21 +1,26 @@
-import { Grid, Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import AuthButton from './auth-button';
-
-interface Props {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  cta: any;
-}
-
-const CTA = (props: Props) => {
-  const { cta } = props;
+import BackgroundImage from './background-image';
+const useStyles = makeStyles(() => ({
+  cta: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+}));
+const CTA = () => {
+  const classes = useStyles();
   return (
-    <Grid item xs>
-      <Typography variant="h2" gutterBottom>
-        {cta}
-      </Typography>
-      <AuthButton label="Sign in" />
-    </Grid>
+    <BackgroundImage>
+      <div className={classes.cta}>
+        <Typography variant="h2" gutterBottom>
+          iLikePLastic
+        </Typography>
+        <AuthButton label="Sign in" />
+      </div>
+    </BackgroundImage>
   );
 };
 

@@ -26,8 +26,8 @@
 ### Install and Run Dev Server
 
 ```bash
-git clone https://github.com/williamluke4/nitro.git
-cd nitro
+git clone https://github.com/patkellydesigns/ilp.git
+cd ilp
 
 yarn
 yarn dev
